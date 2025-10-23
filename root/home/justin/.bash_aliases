@@ -10,10 +10,10 @@ alias ........="cd ../../../../../../.."
 alias mkdir="mkdir -pv"
 alias tree="tree -C"
 alias diff="colordiff"
-alias tsnow="date +%s"
 alias cal="ncal -b -A 1 -B 1"
 alias bc="bc -l"
 alias gs="git status"
+alias tsnow="date +%s"
 ts() {
     local input="$1"
 
