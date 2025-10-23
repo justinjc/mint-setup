@@ -1,0 +1,5 @@
+[
+    { "keys": ["ctrl+t"], "command": "new_file" },
+    { "keys": ["ctrl+tab"], "command": "next_view" },
+    { "keys": ["ctrl+shift+tab"], "command": "prev_view" },
+]

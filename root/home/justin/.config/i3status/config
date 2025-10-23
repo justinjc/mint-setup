@@ -1,0 +1,13 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+general {
+    markup = "pango"
+    colors = true
+    interval = 1
+}
+
+order += "tztime local"
+tztime local {
+    format = "🕑 <span color='#fcb255'>%H:%M</span><span color='#917653'>:%S</span>  📅 <span color='#5e9e39'>%Y-</span><span color='#87e84f'>%m-%d</span>  "
+}
