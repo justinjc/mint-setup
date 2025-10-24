@@ -1,0 +1,36 @@
+[init]
+	defaultBranch = main
+[user]
+	name = Justin Chan
+	email = justin@justinjc.com
+[core]
+	editor = vim
+[pull]
+	ff = only
+[commit]
+	verbose = true
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+[log]
+	date = iso
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[push]
+	default = simple
+	autoSetupRemote = true
+	followTags = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[help]
+	autocorrect = prompt
+[core]
+	excludesfile = ~/.gitignore
