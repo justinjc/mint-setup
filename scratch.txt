@@ -63,7 +63,7 @@ dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
 
 
 # Creates `~/.fehbg` file
-feh --bg-scale macos-desat.png
+feh --bg-scale ~/Pictures/wallpapers/digital-desat.png
 
 
 # Git config
@@ -93,9 +93,6 @@ ssh-keygen -t ed25519 -C "justin@justinjc.com"
 
 # Add SSH key to GitHub
 # https://github.com/settings/keys
-
-
-# Background `~/.fehbg` to change background
 
 
 # Customize grub
