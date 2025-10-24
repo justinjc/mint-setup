@@ -63,7 +63,7 @@ dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
 
 
 # Creates `~/.fehbg` file
-feh --bg-scale ~/Pictures/wallpapers/digital-desat.png
+feh --bg-scale ~/Pictures/wallpapers/digital-desat.jpg
 
 
 # Git config

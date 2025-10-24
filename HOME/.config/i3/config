@@ -89,7 +89,8 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 gaps inner 15px
-gaps horizontal 700
+# Modify the below number to make the first window in a workspace smaller/larger
+gaps horizontal 100
 smart_gaps inverse_outer
 
 floating_modifier Mod1
