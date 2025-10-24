@@ -1,0 +1,2 @@
+Modify the MatchProduct argument with the name of the mouse via:
+`xinput --list --short`

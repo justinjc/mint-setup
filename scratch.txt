@@ -1,12 +1,18 @@
 
+#######################################
+# Manual steps
+#######################################
+
 # Update manager updates
 # Driver manager
 
 sudo apt update
 sudo apt install git
 
+
 #######################################
 # Script
+#######################################
 
 # Backup grub settings 
 sudo cp /etc/default/grub /etc/default/grub.bak
@@ -69,6 +75,7 @@ git config --global core.editor vim
 
 #######################################
 # Manual steps
+#######################################
 
 # Run `lxappearance` to choose theme
 lxappearance
