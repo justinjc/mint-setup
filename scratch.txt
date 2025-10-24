@@ -1,0 +1,95 @@
+
+# Update manager updates
+# Driver manager
+
+sudo apt update
+sudo apt install git
+
+#######################################
+# Script
+
+# Backup grub settings 
+sudo cp /etc/default/grub /etc/default/grub.bak
+
+
+# Install apt packages
+sudo apt install wget gpg i3 wezterm vim feh ripgrep ncal rofi lxappearance tree colordiff
+
+
+# Grub customizer
+sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+sudo apt update
+sudo apt install grub-customizer
+
+
+# Wezterm
+curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
+echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
+sudo chmod 644 /usr/share/keyrings/wezterm-fury.gpg
+sudo apt update
+sudo apt install wezterm
+
+
+# Spotify
+curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+echo "deb https://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt update
+sudo apt install spotify-client
+
+
+# VS Code
+echo "code code/add-microsoft-repo boolean true" | sudo debconf-set-selections
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo install -D -o root -g root -m 644 microsoft.gpg /usr/share/keyrings/microsoft.gpg
+rm -f microsoft.gpg
+sudo apt install apt-transport-https
+sudo apt update
+sudo apt install code
+
+
+# fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install --key-bindings --completion --update-rc --no-zsh --no-fish
+
+
+# Dark mode
+dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
+
+
+# Creates `~/.fehbg` file
+feh --bg-scale macos-desat.png
+
+
+# Git config
+git config --global init.defaultBranch main
+git config --global user.name "Justin Chan"
+git config --global user.email justin@justinjc.com
+git config --global core.editor vim
+
+
+#######################################
+# Manual steps
+
+# Run `lxappearance` to choose theme
+lxappearance
+
+# Sublime Text 3
+# Download from https://www.sublimetext.com/3
+sudo apt install ./sublime-text_build-3211_amd64.deb
+sudo apt-mark hold sublime-text
+# Register license key
+
+
+# Setup SSH key
+ssh-keygen -t ed25519 -C "justin@justinjc.com"
+
+
+# Add SSH key to GitHub
+# https://github.com/settings/keys
+
+
+# Background `~/.fehbg` to change background
+
+
+# Customize grub
+grub-customizer
