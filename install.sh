@@ -51,7 +51,7 @@ install_apt_packages() {
 
 copy_configs() {
     mkdir ~/code
-    git clone --depth=1 https://github.com/justinjc/mint-setup.git ~/code/mint-setup
+    git clone -q --depth=1 https://github.com/justinjc/mint-setup.git ~/code/mint-setup
     sudo cp -a ~/code/mint-setup/HOME/. $HOME
     sudo cp -a ~/code/mint-setup/root/. /
 }
@@ -88,7 +88,7 @@ install_vscode() {
 }
 
 install_fzf() {
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    git clone -q --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
     ~/.fzf/install --key-bindings --completion --update-rc --no-zsh --no-fish
 }
 
