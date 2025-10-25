@@ -6,8 +6,8 @@ Runbook:
 * Install scripts:
 ```
 sudo apt update
-sudo apt install -y git
-git clone -q https://github.com/justinjc/mint-setup.git
+sudo apt install git
+git clone https://github.com/justinjc/mint-setup.git
 ./mint-setup/install.sh
 ```
 * Generate ssh key: `ssh-keygen -t ed25519 -C "justin@justinjc.com"`

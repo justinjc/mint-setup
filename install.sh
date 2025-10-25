@@ -87,16 +87,14 @@ install_vscode() {
 }
 
 install_fzf() {
-    if [ -d "$DIRECTORY" ]; then
-        echo "WARN: ~/.fzf exists; assuming fzf is already installed"
-        return 0
+    if [ ! -d "$HOME"/.fzf ]; then
+        git clone -q --depth 1 https://github.com/junegunn/fzf.git "$HOME"/.fzf
     fi
-    git clone -q --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-    ~/.fzf/install --key-bindings --completion --update-rc --no-zsh --no-fish
+    "$HOME"/.fzf/install --key-bindings --completion --update-rc --no-zsh --no-fish
 }
 
 install_discord() {
-    ~/.local/bin/update-discord.sh
+    "$HOME"/.local/bin/update-discord.sh
 }
 
 set_darkmode() {
@@ -106,7 +104,7 @@ set_darkmode() {
 set_background() {
     # Creates `~/.fehbg` file for desktop background
     # i3 runs this file on startup to set the background
-    feh --bg-scale ~/Pictures/wallpapers/digital-desat.jpg
+    feh --bg-scale "$HOME"/Pictures/wallpapers/digital-desat.jpg
 }
 
 backup_grub_config() {

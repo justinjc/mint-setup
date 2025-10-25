@@ -48,7 +48,7 @@ prompt_command() {
     PS1="\n"
 
     # Hostname
-    PS1+="\[\e[38;5;130m\]\h \[\e[38;5;240m\]  "
+    PS1+="\[\e[38;5;130m\]\h \[\e[38;5;240m\]⌂ "
 
     # Current directory
     PS1+="\[\e[38;5;6m\]\w"
