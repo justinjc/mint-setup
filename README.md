@@ -3,13 +3,15 @@
 Runbook:
 * Check for Update Manager updates
 * Check for Driver Manager updates
-* Install scripts:
+* Run the install script:
 ```
 sudo apt update
 sudo apt install git
 git clone https://github.com/justinjc/mint-setup.git
 ./mint-setup/install.sh
+. ~/.bashrc
 ```
+* Review any errors from the above install script
 * Generate ssh key: `ssh-keygen -t ed25519 -C "justin@justinjc.com"`
 * Add SSH key to GitHub: https://github.com/settings/keys
 * Choose a desktop theme: `lxappearance`
