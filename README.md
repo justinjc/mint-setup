@@ -1,3 +1,5 @@
+# Mint Setup
+
 Runbook:
 * Check for Update Manager updates
 * Check for Driver Manager updates
@@ -13,3 +15,4 @@ git clone -q https://github.com/justinjc/mint-setup.git
 * Choose a desktop theme: `lxappearance`
 * Customize GRUB: `grub-customizer`
 * Register Sublime Text 3 license key
+* Log out and choose i3 as the window manager to log back in

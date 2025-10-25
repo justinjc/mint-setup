@@ -46,7 +46,7 @@ run_task() {
 
 install_apt_packages() {
     sudo apt update
-    sudo apt install -y wget gpg i3 vim feh ripgrep ncal rofi lxappearance tree colordiff htop
+    sudo apt install -y wget gpg i3 vim feh ripgrep ncal rofi lxappearance tree colordiff htop jq yq
 }
 
 copy_configs() {
