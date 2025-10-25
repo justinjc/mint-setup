@@ -46,14 +46,13 @@ run_task() {
 
 install_apt_packages() {
     sudo apt update
-    sudo apt install -y git wget gpg i3 vim feh ripgrep ncal rofi lxappearance tree colordiff htop
+    sudo apt install -y wget gpg i3 vim feh ripgrep ncal rofi lxappearance tree colordiff htop
 }
 
 copy_configs() {
-    mkdir ~/code
-    git clone -q --depth=1 https://github.com/justinjc/mint-setup.git ~/code/mint-setup
-    sudo cp -a ~/code/mint-setup/HOME/. $HOME
-    sudo cp -a ~/code/mint-setup/root/. /
+    SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+    sudo cp -a "$SCRIPT_DIR"/HOME/. $HOME
+    sudo cp -a "$SCRIPT_DIR"/root/. /
 }
 
 install_grub_customizer() {
