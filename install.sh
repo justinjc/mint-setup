@@ -51,7 +51,7 @@ install_apt_packages() {
 
 copy_configs() {
     SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-    sudo cp -a "$SCRIPT_DIR"/HOME/. $HOME
+    sudo cp -a "$SCRIPT_DIR"/HOME/. "$HOME"
     sudo cp -a "$SCRIPT_DIR"/root/. /
 }
 
@@ -87,6 +87,10 @@ install_vscode() {
 }
 
 install_fzf() {
+    if [ -d "$DIRECTORY" ]; then
+        echo "WARN: ~/.fzf exists; assuming fzf is already installed"
+        return 0
+    fi
     git clone -q --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
     ~/.fzf/install --key-bindings --completion --update-rc --no-zsh --no-fish
 }
@@ -122,8 +126,8 @@ install_sublime_text() {
 run_task "APT packages" install_apt_packages
 run_task "Copy configs" copy_configs
 run_task "fzf" install_fzf
-run_task "WezTerm" install_wezterm
 run_task "VS Code" install_vscode
+run_task "WezTerm" install_wezterm
 run_task "Spotify" install_spotify
 run_task "Discord" install_discord
 run_task "Set prefer-dark" set_darkmode
