@@ -55,17 +55,17 @@ prompt_command() {
 
     # Git branch
     local GIT_BRANCH=$(git_branch)
-    if [[ $GIT_BRANCH != "" ]]; then
+    if [ -n "${GIT_BRANCH:-}" ]; then
         PS1+=" \[\e[38;5;240m\]⎇  \[\e[38;5;2m\]$GIT_BRANCH"
     fi
 
     # virtualenv
-    if [[ "$VIRTUAL_ENV" != "" ]]; then
+    if [ -n "${VIRTUAL_ENV:-}" ]; then
         PS1+=" \[\e[38;5;58m\](venv)"
     fi
 
     # Prompt
-    if [[ $EXIT_CODE = 0 ]]; then
+    if [ $EXIT_CODE = 0 ]; then
         PS1+="\n\[\e[38;5;2m\]▹ "
     else
         PS1+="\n\[\e[38;5;1m\]▸ "
@@ -88,8 +88,7 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-  eval `ssh-agent` > /dev/null
+  eval $(ssh-agent) > /dev/null
   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
 fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-
