@@ -117,10 +117,6 @@ install_sublime_text() {
     sudo apt-mark hold sublime-text
 }
 
-reload_bashrc() {
-    . "$HOME"/.bashrc
-}
-
 
 ##################################################
 # Run tasks in order
@@ -137,7 +133,6 @@ run_task "Set background image" set_background
 run_task "Backup GRUB config" backup_grub_config
 run_task "Grub Customizer" install_grub_customizer
 run_task "Sublime Text 3" install_sublime_text
-run_task "Reload .bashrc" reload_bashrc
 
 
 echo "┌─────────┐"
