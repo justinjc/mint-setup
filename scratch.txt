@@ -80,6 +80,8 @@ sudo cp /etc/default/grub /etc/default/grub.bak
 # Run `lxappearance` to choose theme
 lxappearance
 
+# Customize grub
+grub-customizer
 
 # Sublime Text 3
 # Download from https://www.sublimetext.com/3
@@ -97,5 +99,3 @@ ssh-keygen -t ed25519 -C "justin@justinjc.com"
 # https://github.com/settings/keys
 
 
-# Customize grub
-grub-customizer
