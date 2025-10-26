@@ -52,7 +52,7 @@ install_apt_packages() {
 copy_configs() {
     SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
     sudo cp -a "$SCRIPT_DIR"/HOME/. "$HOME"
-    sudo cp -a "$SCRIPT_DIR"/root/. /
+    sudo cp -a "$SCRIPT_DIR"/ROOT/. /
 }
 
 install_grub_customizer() {
