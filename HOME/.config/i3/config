@@ -28,6 +28,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-1/launcher.sh
 bindsym $mod+Shift+d exec --no-startup-id firefox
 bindsym $mod+Delete exec --no-startup-id ~/.config/rofi/applets/bin/powermenu.sh
+bindsym Mod1+F4 exec --no-startup-id /home/justin/.local/bin/i3-alt-f4.sh
 
 set $up k
 set $down j
