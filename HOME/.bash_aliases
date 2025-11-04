@@ -24,5 +24,15 @@ ts() {
 
     date -d@"${input:0:10}"
 }
-alias zzz="xset dpms 60 60 60 && echo 'DPMS set to 60s'"
-alias wake="xset -dpms && echo 'DPMS disabled'"
+dpms_delay() {
+    local delay="$1"
+
+    if [ -z "$delay" ]; then
+        echo "Requires input in seconds"
+        return 1
+    fi
+
+    xset dpms "$delay" "$delay" "$delay" && echo "DPMS delay: ${delay}s"
+}
+alias zzz="dpms_delay 10"
+alias wake="dpms_delay 3600"
