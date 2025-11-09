@@ -8,6 +8,7 @@ alias ......="cd ../../../../.."
 alias .......="cd ../../../../../.."
 alias ........="cd ../../../../../../.."
 alias mkdir="mkdir -pv"
+mkcd () { mkdir "$@" && cd "$@"; }
 alias tree="tree -C"
 alias diff="colordiff"
 alias tsnow="date +%s"
