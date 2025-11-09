@@ -33,6 +33,8 @@ dpms_delay() {
         return 1
     fi
 
+    xset s off
+    xset s noblank
     xset dpms "$delay" "$delay" "$delay" && echo "DPMS delay: ${delay}s"
 }
 alias zzz="dpms_delay 10"
